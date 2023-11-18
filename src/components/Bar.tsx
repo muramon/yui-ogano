@@ -15,7 +15,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { useNavigate } from 'react-router-dom';
 import { createTheme, IconButton, Typography } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
-
+import Chip from '@mui/material/Chip';
 
 function Bar() {
 
@@ -43,7 +43,7 @@ function Bar() {
     };
 
     const handleMailClick = () => {
-        window.location.href = 'mailto:example@example.com';
+        window.location.href = 'mailto:yuiyuno.photo@gmail.com';
     };
     return (
         <AppBar position="fixed" color="primary">
@@ -55,41 +55,84 @@ function Bar() {
             }}
         >
             <List>
-            <ListItem>
+            <ListItem
+             button
+             sx={{
+                '&:hover': {
+                  backgroundColor: '#f0f0f0', // ホバー時の背景色を指定
+                },
+              }}
+              >
                 <ListItemIcon>
                 <HomeIcon onClick={() => navigate("/")}/>
                 </ListItemIcon>
                 <ListItemText primary="Home" onClick={() => navigate("/")}/>
             </ListItem>
-            <ListItem>
+            <ListItem
+             button
+             sx={{
+                '&:hover': {
+                  backgroundColor: '#f0f0f0', // ホバー時の背景色を指定
+                },
+              }}
+              >
                 <ListItemIcon>
                 <LocalSeeIcon onClick={() => navigate("gallery")}/>
                 </ListItemIcon>
                 <ListItemText primary="Gallery" onClick={() => navigate("/gallery")}/>
+                {/* <Chip label="Gallery" variant="outlined" onClick={() => navigate("/gallery")} /> */}
             </ListItem>
-            <ListItem>
+            <ListItem
+             button
+             sx={{
+                '&:hover': {
+                  backgroundColor: '#f0f0f0', // ホバー時の背景色を指定
+                },
+              }}
+              >
                 <ListItemIcon>
                 <AccountBoxIcon onClick={() => navigate("/biography")}/>
                 </ListItemIcon>
                 <ListItemText primary="Biography" onClick={() => navigate("/biography")}/>
             </ListItem>
-            <ListItem>
+            <ListItem
+             button
+             sx={{
+                '&:hover': {
+                  backgroundColor: '#f0f0f0', // ホバー時の背景色を指定
+                },
+              }}
+              >
                 <ListItemIcon>
                 <ImportContactsIcon />
                 </ListItemIcon>
-                <ListItemText primary="Zine"/>
+                <ListItemText primary="Zine" onClick={() => navigate("/zine")}/>
             </ListItem>
-            <ListItem>
+            <ListItem
+             button
+             sx={{
+                '&:hover': {
+                  backgroundColor: '#f0f0f0', // ホバー時の背景色を指定
+                },
+              }}
+              >
                 <ListItemIcon>
                 <MailIcon onClick={handleMailClick}/>
                 </ListItemIcon>
                 <ListItemText primary="Contact" onClick={handleMailClick}/>
             </ListItem>
-            <ListItem>
+            <ListItem
+             button
+             sx={{
+                '&:hover': {
+                  backgroundColor: '#f0f0f0', // ホバー時の背景色を指定
+                },
+              }}
+              >
                 <ListItemIcon>
                 <InstagramIcon onClick={handleClick} />
                 </ListItemIcon>
-                <ListItemText primary="Instagram" onClick={handleClick} />
+                <ListItemText primary="Instagram" onClick={handleClick}/>
             </ListItem>
             </List>
         </Drawer>
